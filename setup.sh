@@ -1,14 +1,17 @@
 #!/bin/bash
+cd "$(dirname "$0")"
 
 if [ "$1" == 'twocol' ]; then
     cp -rn templates/twocolumnreport/* ..
     cp -rn templates/global_onetwo/* ..
+    mkdir -p ../fig/
     exit 0;
 fi
 
 if [ "$1" == 'onecol' ]; then
     cp -rn templates/onecolumnreport/* ..
     cp -rn templates/global_onetwo/* ..
+    mkdir -p ../fig/
     exit 0;
 fi
 
