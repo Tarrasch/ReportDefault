@@ -8,7 +8,7 @@ OPENPROGRAM = -evince
 all: latex openprog
 
 
-fast: fastlatex acroread
+fast: fastlatex openprog
 
 fastlatex:
 	-pdflatex -shell-escape $(DOCUMENT)
