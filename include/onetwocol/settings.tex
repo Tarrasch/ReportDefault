@@ -1,55 +1,5 @@
-\definecolor{listinggray}{gray}{0.9}
-\definecolor{lbcolor}{rgb}{0.9,0.9,0.9}
-\lstset{
-	backgroundcolor=\color{lbcolor},
-	tabsize=4,
-	rulecolor=,
-	language=matlab,
-        basicstyle=\scriptsize,
-        upquote=true,
-        aboveskip={1.5\baselineskip},
-        columns=fixed,
-        showstringspaces=false,
-        extendedchars=true,
-        breaklines=true,
-        prebreak = \raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
-        frame=single,
-        showtabs=false,
-        showspaces=false,
-        showstringspaces=false,
-        identifierstyle=\ttfamily,
-        keywordstyle=\color[rgb]{0,0,1},
-        commentstyle=\color[rgb]{0.133,0.545,0.133},
-        stringstyle=\color[rgb]{0.627,0.126,0.941},
-}
-\lstset{literate=%
-{æ}{{\ae}}1
-{å}{{\aa}}1
-{Å}{{\AA}}1
-{ø}{{\o}}1
-{Æ}{{\AE}}1
-{Å}{{\AA}}1
-{Ø}{{\O}}1
-{ö}{{\"o}}1
-{Ö}{{\"O}}1
-{ä}{{\"a}}1
-{Ä}{{\"A}}1
-}
-\lstset{extendedchars=\true}
-\lstset{inputencoding=ansinew}
+\bibliographystyle{ReportDefault/include/common/mybstfile}
 
-%\usepackage{geometry}
-\bibliographystyle{ReportDefault/include/mybstfile}
-
-%\usepackage[version=3]{mhchem}
-\usepackage[T1]{fontenc}
-\hypersetup{
-colorlinks,%
-citecolor=black,%
-filecolor=black,%
-linkcolor=black,%
-urlcolor=black
-}
 % Change the width of the text, and use the horizontal offset to center text.
 \addtolength{\textwidth}{1.8in}
 \addtolength{\hoffset}{-0.9in}
@@ -58,7 +8,6 @@ urlcolor=black
 \rhead{\scriptsize{\thepage\ (\pageref{LastPage}})}
 \renewcommand\headrulewidth{0.5pt}
 \renewcommand\footrulewidth{0.5pt}
-\usepackage{amssymb}
 \newcommand{\fig}{figur~\ref}
 \newcommand{\ch}{\mathrm}
 \newcommand{\bfs}{\boldsymbol}
@@ -105,13 +54,3 @@ urlcolor=black
 
 \graphicspath{{fig/}}
 
-% PDF Metadata and link styles
-\hypersetup{
-		pdftitle={Report by Rikard Lundmark},%
-		pdfauthor={Rikard Lundmark},%
-    colorlinks=true,%
-    citecolor=black,%
-    filecolor=black,%
-    linkcolor=black,%
-    urlcolor=black
-}

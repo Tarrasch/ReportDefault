@@ -38,11 +38,8 @@
 \lstset{extendedchars=\true}
 \lstset{inputencoding=ansinew}
 
-%\usepackage{geometry}
-\bibliographystyle{ReportDefault/include/mybstfile}
 
-%\usepackage[version=3]{mhchem}
-\usepackage[T1]{fontenc}
+
 \hypersetup{
 colorlinks,%
 citecolor=black,%
@@ -50,60 +47,6 @@ filecolor=black,%
 linkcolor=black,%
 urlcolor=black
 }
-% Change the width of the text, and use the horizontal offset to center text.
-\addtolength{\textwidth}{1.8in}
-\addtolength{\hoffset}{-0.9in}
-\pagestyle{fancy}
-\lhead{\emph{\scriptsize{Rikard Lundmark}}}
-\rhead{\scriptsize{\thepage\ (\pageref{LastPage}})}
-\renewcommand\headrulewidth{0.5pt}
-\renewcommand\footrulewidth{0.5pt}
-\usepackage{amssymb}
-\newcommand{\fig}{figur~\ref}
-\newcommand{\ch}{\mathrm}
-\newcommand{\bfs}{\boldsymbol}
-\newcommand{\tbl}{tabell~\ref}
-\usepackage{fancyhdr}
-\pagestyle{fancyplain}
-%\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
-\lhead{\fancyplain{}{\thepage}}
-\chead{}
-\rhead{\fancyplain{}{\textit{\leftmark}}}
-\lfoot{}
-\cfoot{}
-\rfoot{}
-\setcounter{secnumdepth}{3}
-% New definition of square root:
-% it renames \sqrt as \oldsqrt
-\let\oldsqrt\sqrt
-% it defines the new \sqrt in terms of the old one
-\def\sqrt{\mathpalette\DHLhksqrt}
-\def\DHLhksqrt#1#2{%
-\setbox0=\hbox{$#1\oldsqrt{#2\,}$}\dimen0=\ht0
-\advance\dimen0-0.2\ht0
-\setbox2=\hbox{\vrule height\ht0 depth -\dimen0}%
-{\box0\lower0.4pt\box2}}
-%\numberwithin{equation}{section}
-\setlength{\columnsep}{0.8cm}
-%\setlength{\textwidth}{15cm}
-
-% Fancyheader shortcuts
-\newcommand{\setdefaulthdr}{%
-\fancyhead[L]{\footnotesize \slshape \rightmark}%
-\fancyhead[R]{\footnotesize \slshape \leftmark}%
-\fancyfoot[C]{\thepage}%
-}
-\newcommand{\setspecialhdr}{%
-\fancyhead[L]{ }%
-\fancyhead[R]{\slshape \leftmark}%
-\fancyfoot[C]{\thepage\ (\pageref{LastPage})}%
-}
-
-\renewcommand{\topfraction}{0.85}
-\renewcommand{\textfraction}{0.1}
-\renewcommand{\floatpagefraction}{0.85}
-
-\graphicspath{{fig/}}
 
 % PDF Metadata and link styles
 \hypersetup{
