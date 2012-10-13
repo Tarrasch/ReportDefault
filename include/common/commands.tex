@@ -23,3 +23,11 @@
 
 \newcommand*\circled[1]{\tikz[baseline=(char.base)]{
             \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+
+\newcommand{\panicmargindecrement}[2]{
+\addtolength{\oddsidemargin}{-#1}
+\addtolength{\evensidemargin}{-#1}
+\addtolength{\textwidth}{#1*\real{2}}
+\addtolength{\topmargin}{-#2}
+\addtolength{\textheight}{#2}
+}
