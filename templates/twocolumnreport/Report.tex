@@ -11,12 +11,12 @@
 \input{config/Titlepage}
 \clearpage
 \setdefaulthdr
-\twocolumn
+\begin{multicols}{2}
 \input{sections/Content}
-
 
 \bibliography{bibliography/Sources}
 \addcontentsline{toc}{section}{\numberline{}References}
 \setspecialhdr
+\end{multicols}
 
 \end{document}
