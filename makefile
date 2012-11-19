@@ -10,6 +10,22 @@ all: latex openprog
 
 fast: fastlatex openprog
 
+presentation-make: no-source-latex openprog
+
+presentation-publish-make: publish-latex 
+	$(OPENPROGRAM) handout-$(DOCUMENT).pdf
+
+
+no-source-latex:
+	-pdflatex -shell-escape $(DOCUMENT)
+	-pdflatex -shell-escape $(DOCUMENT)
+	-pdflatex -shell-escape $(DOCUMENT)
+
+publish-latex:
+	pdflatex --jobname=handout-$(DOCUMENT) '\PassOptionsToClass{handout}{beamer} \input{$(DOCUMENT)}' 
+	pdflatex --jobname=handout-$(DOCUMENT) '\PassOptionsToClass{handout}{beamer} \input{$(DOCUMENT)}' 
+	pdflatex --jobname=handout-$(DOCUMENT) '\PassOptionsToClass{handout}{beamer} \input{$(DOCUMENT)}' 
+
 fastlatex:
 	-pdflatex -shell-escape $(DOCUMENT)
 
@@ -35,6 +51,7 @@ cleanall: clean
 	-find . -type f -name "*.log" -exec rm -f {} \;
 	-find . -type f -name "*.out" -exec rm -f {} \;
 	-find . -type f -name "*.blg" -exec rm -f {} \;
+	-find . -type f -name "*.nav" -exec rm -f {} \;
 
 
 fpdfeps:
