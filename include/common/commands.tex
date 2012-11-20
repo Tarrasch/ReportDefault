@@ -39,7 +39,8 @@
 \newlength{\dotlength}
 \settowidth{\dotlength}{$\cdot$}
 \newlength{\argX}
-\newcommand{\centereddot}[1]{ \settowidth{\argX}{#1} \setlength{\argX}{0.4\argX-0.5\dotlength} \hspace{\argX}\ensuremath{\cdot}\hspace{\argX}}
+\newcommand{\centereddot}[1]{ \settowidth{\argX}{\ensuremath{#1}} \setlength{\argX}{0.4\argX-0.5\dotlength} \ensuremath{\hspace{\argX}\cdot\hspace{\argX}}}
+
 \newcommand{\Ruuuu}[4]{\ensuremath{R^{#1 #2 #3 #4}}}
 \newcommand{\Ruuud}[4]{\ensuremath{R^{#1 #2 #3}_{\centereddot{#1}\centereddot{#2}\centereddot{#3} #4}}}
 \newcommand{\Ruudu}[4]{\ensuremath{R^{#1 #2 \centereddot{#3} #4}_{\centereddot{#1} \centereddot{#2} #3 }}}
