@@ -34,6 +34,7 @@
 
 \newcommand{\U}[2][]{\ensuremath{\unit[#1]{#2}}}
 
+<<<<<<< HEAD
 %These commands makes it possible to get a plus-minus with parenthesis around one of them.
 \newcommand\varpm{\mathbin{\vcenter{\hbox{%
   \oalign{\hfil$\scriptstyle+$\hfil\cr
@@ -45,3 +46,29 @@
           \noalign{\kern-.3ex}
           \hfil$\scriptscriptstyle-$\hfil\cr}%
 }}}}
+=======
+
+%Typesetting the Ricci tensor in a neat way:
+\newlength{\dotlength}
+\settowidth{\dotlength}{$\cdot$}
+\newlength{\argX}
+\newcommand{\centereddot}[1]{ \settowidth{\argX}{\ensuremath{#1}} \setlength{\argX}{0.4\argX-0.5\dotlength} \ensuremath{\hspace{\argX}\cdot\hspace{\argX}}}
+
+\newcommand{\Ruuuu}[4]{\ensuremath{R^{#1 #2 #3 #4}}}
+\newcommand{\Ruuud}[4]{\ensuremath{R^{#1 #2 #3}_{\centereddot{#1}\centereddot{#2}\centereddot{#3} #4}}}
+\newcommand{\Ruudu}[4]{\ensuremath{R^{#1 #2 \centereddot{#3} #4}_{\centereddot{#1} \centereddot{#2} #3 }}}
+\newcommand{\Ruudd}[4]{\ensuremath{R^{#1 #2}_{\centereddot{#1} \centereddot{#2} #3 #4}}}
+\newcommand{\Ruduu}[4]{\ensuremath{R^{#1 \centereddot{#2} #3 #4}_{\centereddot{#1} #2 }}}
+\newcommand{\Rudud}[4]{\ensuremath{R^{#1 \centereddot{#2} #3}_{\centereddot{#1} #2 \centereddot{#3} #4 }}}
+\newcommand{\Ruddu}[4]{\ensuremath{R^{#1 \centereddot{#2}\centereddot{#3} #4}_{\centereddot{#1} #2 #3 }}}
+\newcommand{\Ruddd}[4]{\ensuremath{R^{#1}_{\centereddot{#1} #2 #3 #4}}}
+
+\newcommand{\Rduuu}[4]{\ensuremath{R^{\centereddot{#1} #2 #3 #4}_{#1}}}
+\newcommand{\Rduud}[4]{\ensuremath{R^{\centereddot{#1} #2 #3}_{#1 \centereddot{#2} \centereddot{#3} #4}}}
+\newcommand{\Rdudu}[4]{\ensuremath{R^{\centereddot{#1} #2 \centereddot{#3} #4}_{#1 \centereddot{#2} #3}}}
+\newcommand{\Rdudd}[4]{\ensuremath{R^{\centereddot{#1} #2}_{#1 \centereddot{#2} #3 #4}}}
+\newcommand{\Rdduu}[4]{\ensuremath{R^{\centereddot{#1}\centereddot{#2} #3 #4}_{#1 #2}}}
+\newcommand{\Rddud}[4]{\ensuremath{R^{\centereddot{#1}\centereddot{#2} #3}_{#1 #2 \centereddot{#3} #4}}}
+\newcommand{\Rdddu}[4]{\ensuremath{R^{\centereddot{#1}\centereddot{#2}\centereddot{#3} #4}_{#1 #2 #3 }}}
+\newcommand{\Rdddd}[4]{\ensuremath{R_{#1 #2 #3 #4}}}
+>>>>>>> 3d1127b43af5b5e884c761d82030af5c9fd31b3b
