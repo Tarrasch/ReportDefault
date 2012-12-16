@@ -25,10 +25,17 @@ if [ "$1" == 'present' ]; then
     exit 0;
 fi
 
+if [ "$1" == 'cv' ]; then
+    cp -rn templates/cv/* ..
+    exit 0;
+fi
+
+
 echo "Use to set up a report in parent directory."
 echo "Currently supported arguments:"
 echo "twocol"
 echo "onecol"
 echo "lecture"
 echo "present"
+echo "cv"
 exit 1;
