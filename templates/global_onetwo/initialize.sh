@@ -59,13 +59,17 @@ if [[ $a == "Y" || $a == "y" ]]; then
 		sed -i "s/section{Introduction}/section{$s}/1" sections/$fn.tex
 	    else
 		rm sections/Content.tex
-		echo "\\section{$s}\n" >> sections/$fn.tex
+		echo -e "\\section{$s}\n" >> sections/$fn.tex
 	    fi
 	else
 	    echo "\\section{$s}" >> sections/$fn.tex
 	fi
 	sed -i "s/\\\\input{sections\/Content}/\\\\input{sections\/$fn}\n$CP\n&/" Report.tex
 	
+	if [ $x -eq $((N-1)) ]
+	    CP="";
+	fi
+
 	x=$(( $x + 1 ))
     done
     sed -i '/\\input{sections\/Content}/d' Report.tex
