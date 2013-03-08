@@ -28,7 +28,8 @@ function main()
     
     if [ -f ../initialize.sh ]
 	then
-	./../initialize.sh
+	cd ..
+	./initialize.sh
     fi
     
 }
