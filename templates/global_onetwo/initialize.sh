@@ -66,7 +66,7 @@ if [[ $a == "Y" || $a == "y" ]]; then
 	fi
 	sed -i "s/\\\\input{sections\/Content}/\\\\input{sections\/$fn}\n$CP\n&/" Report.tex
 	
-	if [ $x -eq $((N-1)) ]
+	if [ $x -eq $((N-1)) ]; then
 	    CP="";
 	fi
 
