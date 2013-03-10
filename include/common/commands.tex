@@ -1,8 +1,8 @@
-\newcommand{\bra}[1]{\langle #1|}
-\newcommand{\ket}[1]{|#1\rangle}
-\newcommand{\braket}[2]{\langle #1|#2\rangle}
-\newcommand{\bracket}[3]{\langle #1|#2|#3\rangle}
-\newcommand{\expect}[1]{\langle #1 \rangle}
+\newcommand{\bra}[1]{\left\langle #1\right|}
+\newcommand{\ket}[1]{\left|#1\right\rangle}
+\newcommand{\braket}[2]{\left\langle #1|#2\right\rangle}
+\newcommand{\bracket}[3]{\left\langle #1|#2|#3\right\rangle}
+\newcommand{\expect}[1]{\left\langle #1 \right\rangle}
 \newcommand{\assumption}[1]{
 
 {\bf Assumption:} #1}
@@ -70,3 +70,6 @@
 \newcommand{\Rddud}[4]{\ensuremath{R^{\centereddot{#1}\centereddot{#2} #3}_{#1 #2 \centereddot{#3} #4}}}
 \newcommand{\Rdddu}[4]{\ensuremath{R^{\centereddot{#1}\centereddot{#2}\centereddot{#3} #4}_{#1 #2 #3 }}}
 \newcommand{\Rdddd}[4]{\ensuremath{R_{#1 #2 #3 #4}}}
+
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
