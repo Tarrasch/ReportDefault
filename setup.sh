@@ -22,6 +22,9 @@ function main()
 	"cv")
 	    cp -rn templates/cv/* ..
 	    ;;
+	"coverletter")
+	    cp -rn templates/coverletter/* ..
+	    ;;
 	*)
 	    print_error_and_fail
     esac
