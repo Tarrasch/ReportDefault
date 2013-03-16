@@ -67,9 +67,10 @@ if [[ $a == "Y" || $a == "y" ]]; then
 	sed -i "s/\\\\input{sections\/Content}/\\\\input{sections\/$fn}\n$CP\n&/" Report.tex
 	
 	if [ $x -eq $((N-1)) ]; then
-	    CP="";
+	    if [ $bibliography -eq 0 ]; then
+		CP="";
+	    fi
 	fi
-
 	x=$(( $x + 1 ))
     done
     sed -i '/\\input{sections\/Content}/d' Report.tex
