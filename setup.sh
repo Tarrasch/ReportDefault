@@ -1,41 +1,52 @@
 #!/bin/bash
-cd "$(dirname "$0")"
 
-if [ "$1" == 'twocol' ]; then
-    cp -rn templates/twocolumnreport/* ..
-    cp -rn templates/global_onetwo/* ..
-    mkdir -p ../fig/
-    exit 0;
-fi
+function main()
+{
+    cd "$(dirname "$0")"
+    
+    case "$1" in
+	
+	"twocol")    
+	    cp -rn templates/twocolumnreport/* ..
+	    cp -rn templates/global_onetwo/* ..
+	    mkdir -p ../fig/
+	    ;;
+	"onecol")
+	    cp -rn templates/onecolumnreport/* ..
+	    cp -rn templates/global_onetwo/* ..
+	    mkdir -p ../fig/
+	    ;;
+	"lecture")
+	    cp -rn templates/lecture/* ..
+	    ;;
+	"cv")
+	    cp -rn templates/cv/* ..
+	    ;;
+	"coverletter")
+	    cp -rn templates/coverletter/* ..
+	    ;;
+	*)
+	    print_error_and_fail
+    esac
+    
+    if [ -f ../initialize.sh ]
+	then
+	cd ..
+	./initialize.sh
+    fi
+    
+}
 
-if [ "$1" == 'onecol' ]; then
-    cp -rn templates/onecolumnreport/* ..
-    cp -rn templates/global_onetwo/* ..
-    mkdir -p ../fig/
-    exit 0;
-fi
+function print_error_and_fail()
+{
+    echo "Use to set up a report in parent directory.";
+    echo "Currently supported report types:";
+    echo -e "twocol \t\t (two-column report)";
+    echo -e "onecol \t\t (one-column report)";
+    echo -e "lecture \t (lecture notes)";
+    echo -e "present \t (beamer presentation)";
+    echo -e "cv \t\t (Curriculum Vitae)";
+    exit 1;    
+}
 
-if [ "$1" == 'lecture' ]; then
-    cp -rn templates/lecture/* ..
-    exit 0;
-fi
-
-if [ "$1" == 'present' ]; then
-    cp -rn templates/present/* ..
-    exit 0;
-fi
-
-if [ "$1" == 'cv' ]; then
-    cp -rn templates/cv/* ..
-    exit 0;
-fi
-
-
-echo "Use to set up a report in parent directory."
-echo "Currently supported arguments:"
-echo "twocol"
-echo "onecol"
-echo "lecture"
-echo "present"
-echo "cv"
-exit 1;
+main $1
