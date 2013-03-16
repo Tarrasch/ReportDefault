@@ -20,6 +20,13 @@ if [[ $a == "Y" || $a == "y" ]]; then
     #echo $a > sections/Abstract.tex
 fi
 
+feynman=0;
+echo "Do you need Feynman diagrams? Default is no. (y/n)"
+read a
+if [[ $a == "Y" || $a == "y" ]]; then
+    feynman=1;
+fi
+
 bibliography=1;
 echo "Do you need a bibliography? Default is yes. (y/n)"
 read a
@@ -27,10 +34,17 @@ if [[ $a == "N" || $a == "n" ]]; then
     sed -i '/\\bibliography{bibliography\/Sources}/d' Report.tex
     sed -i '/\\addcontentsline{toc}{section}{\\numberline{}References}/d' Report.tex
     rm -r bibliography
-    sed -i '1idefault: no-source-latex openprog\n' makefile
+    if [[ $feynman -eq 0 ]]; then
+	sed -i '1idefault: no-source-latex openprog\n' makefile
+    else
+	sed -i '1idefault: feynman-latex no-source-latex openprog\n' makefile
+    fi
     bibliography=0;
 fi
 
+if [[ $bibliography -eq 1 ]] && [[ $feynman -eq 1 ]]; then
+    sed -i '1idefault: feynman-latex all\n' makefile
+fi
 
 echo "Do you want to configure separated sections now? Default is no. (y/n)"
 read a

@@ -63,3 +63,6 @@ pdfeps:
 	for i in `ls fig | grep .pdf | grep -v .pdf_t`; do svn lock fig/$$i; done
 	for i in `ls fig | grep .eps`; do svn lock fig/$$i; done
 	for i in `ls fig | grep .eps`; do epstopdf fig/$$i; done
+
+feynman-latex: fastlatex
+	for i in $$(ls | grep .mp); do mpost $$i; done
