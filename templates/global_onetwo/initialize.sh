@@ -14,9 +14,10 @@ sed -i "s/Document subtitle/$a/1" config/Titlepage.tex
 echo "Do you want to type in an abstract now? Only one-line abstract supported in command line. Default is no. (y/n)"
 read a
 if [[ $a == "Y" || $a == "y" ]]; then
-    echo "Abstract (press enter to finish):"
-    read a
-    echo $a > sections/Abstract.tex
+    gnome-open sections/Abstract.tex
+    #echo "Abstract (press enter to finish):"
+    #read a
+    #echo $a > sections/Abstract.tex
 fi
 
 bibliography=1;
