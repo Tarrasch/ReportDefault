@@ -52,9 +52,9 @@ cleanall: clean
 	-find . -type f -name "*.out" -exec rm -f {} \;
 	-find . -type f -name "*.blg" -exec rm -f {} \;
 	-find . -type f -name "*.nav" -exec rm -f {} \;
-	-find . -type f -name "*.t1" -exec rm -f {} \;
+	-find . -type f -regextype posix-extended -regex '.{1,100}\.t[1-9]{1,3}' -exec rm -f {} \;
 	-find . -type f -name "*.mp" -exec rm -f {} \;
-	-find . -type f -name "*.1" -exec rm -f {} \;
+	-find . -type f -regextype posix-extended -regex '.{1,100}\.[1-9]{1,3}' -exec rm -f {} \;
 
 
 fpdfeps:
