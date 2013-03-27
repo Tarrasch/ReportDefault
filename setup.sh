@@ -19,6 +19,9 @@ function main()
 	"lecture")
 	    cp -rn templates/lecture/* ..
 	    ;;
+	"present")
+	    cp -rn templates/present/* ..
+	    ;;
 	"cv")
 	    cp -rn templates/cv/* ..
 	    ;;
@@ -45,6 +48,7 @@ function print_error_and_fail()
     echo -e "onecol \t\t (one-column report)";
     echo -e "lecture \t (lecture notes)";
     echo -e "present \t (beamer presentation)";
+    echo -e "coverletter \t (beamer presentation)";
     echo -e "cv \t\t (Curriculum Vitae)";
     exit 1;    
 }
