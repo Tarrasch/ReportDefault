@@ -17,9 +17,9 @@ presentation-publish-make: publish-latex
 
 
 no-source-latex:
-	-pdflatex -shell-escape $(DOCUMENT)
-	-pdflatex -shell-escape $(DOCUMENT)
-	-pdflatex -shell-escape $(DOCUMENT)
+	-pdflatex --shell-escape $(DOCUMENT)
+	-pdflatex --shell-escape $(DOCUMENT)
+	-pdflatex --shell-escape $(DOCUMENT)
 
 publish-latex:
 	pdflatex --jobname=handout-$(DOCUMENT) '\PassOptionsToClass{handout}{beamer} \input{$(DOCUMENT)}' 
