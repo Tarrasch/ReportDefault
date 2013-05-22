@@ -17,9 +17,9 @@ presentation-publish-make: publish-latex
 
 
 no-source-latex:
-	-pdflatex -shell-escape $(DOCUMENT)
-	-pdflatex -shell-escape $(DOCUMENT)
-	-pdflatex -shell-escape $(DOCUMENT)
+	-pdflatex --shell-escape $(DOCUMENT)
+	-pdflatex --shell-escape $(DOCUMENT)
+	-pdflatex --shell-escape $(DOCUMENT)
 
 publish-latex:
 	pdflatex --jobname=handout-$(DOCUMENT) '\PassOptionsToClass{handout}{beamer} \input{$(DOCUMENT)}' 
@@ -52,6 +52,9 @@ cleanall: clean
 	-find . -type f -name "*.out" -exec rm -f {} \;
 	-find . -type f -name "*.blg" -exec rm -f {} \;
 	-find . -type f -name "*.nav" -exec rm -f {} \;
+	-find . -type f -regextype posix-extended -regex '.{1,100}\.t[1-9]{1,3}' -exec rm -f {} \;
+	-find . -type f -name "*.mp" -exec rm -f {} \;
+	-find . -type f -regextype posix-extended -regex '.{1,100}\.[1-9]{1,3}' -exec rm -f {} \;
 
 
 fpdfeps:
@@ -60,3 +63,6 @@ pdfeps:
 	for i in `ls fig | grep .pdf | grep -v .pdf_t`; do svn lock fig/$$i; done
 	for i in `ls fig | grep .eps`; do svn lock fig/$$i; done
 	for i in `ls fig | grep .eps`; do epstopdf fig/$$i; done
+
+feynman-latex: fastlatex
+	for i in $$(ls | grep .mp); do mpost $$i; done
