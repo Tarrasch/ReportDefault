@@ -1,0 +1,27 @@
+% Chalmers title page
+\begin{titlepage}
+
+\AddToShipoutPicture{\backgroundpic{-4}{56.7}{fig/auxiliary/frontpage.pdf}}
+\AddToShipoutPicture{\put(150,400){\includegraphics[width=0.50\paperwidth]{\FrontpagePicture}}}
+\mbox{}
+\vfill
+\addtolength{\voffset}{2cm}
+\begin{flushleft}
+	{\noindent {\huge \ThesisName} \\[0.5cm]
+	\emph{\Large \SubThesisName} \\[.8cm]
+	
+        \ifdefined\FirstAuthor
+	{\Large \uppercase{\FirstAuthor}} \ifdefined\SecondAuthor\\[.3cm]
+        {\Large \uppercase{\SecondAuthor}}\fi \\[.8cm] \fi
+	
+	{\Large \AuthorDepartment \\
+	\emph{\AuthorResearchDivision} \\
+	\textsc{\AuthorAffiliation} \\
+	\AuthorUniversityCity, \AuthorUniversityCountry \the\year \\
+	} 
+	}
+\end{flushleft}
+
+\end{titlepage}
+\ClearShipoutPicture
+% End Chalmers title page

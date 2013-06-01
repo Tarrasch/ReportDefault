@@ -1,0 +1,19 @@
+\newcommand{\backgroundpic}[3]{%
+	\put(#1,#2){
+		\parbox[b][\paperheight]{\paperwidth}{%
+			\centering
+			\includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{#3}
+			\vfill
+}}}
+
+
+\newcommand{\setdefaulthdr}{%
+\fancyhead[L]{\footnotesize \slshape \rightmark}%
+\fancyhead[R]{\footnotesize \slshape \leftmark}%
+\fancyfoot[C]{\thepage}%
+}
+\newcommand{\setspecialhdr}{%
+\fancyhead[L]{ }%
+\fancyhead[R]{\slshape \leftmark}%
+\fancyfoot[C]{\thepage}%
+}

@@ -1,0 +1,3 @@
+This is the current TODO list:
+Fix conditional inclusion depending on package availibility (for example for running on Chalmers computers).
+More guided setup scripts for even easier use.

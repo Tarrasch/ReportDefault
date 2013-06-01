@@ -1,5 +1,3 @@
-\def\name{Rikard Lundmark}
-
 % Change the width of the text, and use the horizontal offset to center text.
 %\addtolength{\textwidth}{0.2in}
 %\addtolength{\hoffset}{-0.1in}
@@ -39,7 +37,7 @@
 \graphicspath{{fig/}}
 
 % PDF Metadata and link styles
-\def\footerlink{http://web.student.chalmers.se/~riklund/}
+\def\footerlink{\AuthorURL}
 \hypersetup{
   colorlinks=true,
   urlcolor=black,
@@ -47,11 +45,11 @@
   filecolor=black,
   linkcolor=black,
   pdfauthor={\name},
-  pdfkeywords={Cover Letter, Rikard, Lundmark},
+  pdfkeywords={Cover Letter, \AuthorName},
   pdftitle={\name: Cover Letter},
   pdfsubject={Cover Letter},
   pdfcreator=LaTeX,
-  pdfproducer=Rikard Lundmark,
+  pdfproducer=\AuthorName,
   pdfpagemode=UseNone
 }
 
@@ -66,10 +64,3 @@
 
 % Don't indent paragraphs.
 \setlength\parindent{0em}
-%\pagestyle{myheadings}
-
-%\geometry{
-%  body={6.5in,9.5in},
-%  left=1.0in,
-%  top=1.25in,
-%}
