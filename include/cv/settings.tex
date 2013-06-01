@@ -3,7 +3,7 @@
 \addtolength{\hoffset}{-0.9in}
 \pagestyle{fancy}
 \fancyhf{} 
-\lhead{\emph{Rikard Lundmark}}
+\lhead{\emph{\AuthorName}}
 \rhead{\scriptsize{\thepage\ (\pageref{LastPage}})} 
 \renewcommand\headrulewidth{0pt} % Removes funny header line 
 \thispagestyle{empty}
@@ -36,16 +36,16 @@
 \graphicspath{{fig/}}
 
 % PDF Metadata and link styles
-\def\footerlink{http://web.student.chalmers.se/~riklund/}
+\def\footerlink{\AuthorURL}
 \hypersetup{
   colorlinks=true,
   urlcolor=black,
   citecolor=black,
   filecolor=black,
   linkcolor=black,
-  pdfauthor={Rikard Lundmark},
+  pdfauthor={\AuthorName},
   pdfkeywords={Curriculum, Vitae, CV, \AuthorName},
-  pdftitle={\name: Curriculum Vitae},
+  pdftitle={\AuthorName: Curriculum Vitae},
   pdfsubject={Curriculum Vitae},
   pdfcreator=LaTeX,
   pdfproducer=\AuthorName,
