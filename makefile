@@ -7,8 +7,14 @@ OPENPROGRAM = -evince
 
 LATEXFLAGS = --shell-escape
 
+TEMPFILES =  "*.aux" "*.toc" "*.bbl" "*.log" "*.out" "*.blg" "*.nav"  "*.mp" "*.acn" "*.acr" "*.alg" "*.glg" "*.glo" "*.gls" "*.idx" "*.xdy"
+
+
 all: latex openprog
 
+.PHONY: all glossaries-latex latex-then-glossaries fast presentation-make presentation-publish-make no-source-latex publish-latex glossaries fast-latex latex dual-source-latex openprog clean cleanall fpdfeps pdfeps feynman-latex
+
+glossaries-latex: fastlatex glossaries latex openprog
 
 fast: fastlatex openprog
 
@@ -26,6 +32,9 @@ publish-latex:
 	pdflatex --jobname=handout-$(DOCUMENT) '\PassOptionsToClass{handout}{beamer} \input{$(DOCUMENT)}' 
 	pdflatex --jobname=handout-$(DOCUMENT) '\PassOptionsToClass{handout}{beamer} \input{$(DOCUMENT)}' 
 	pdflatex --jobname=handout-$(DOCUMENT) '\PassOptionsToClass{handout}{beamer} \input{$(DOCUMENT)}' 
+
+glossaries:
+	-makeglossaries $(DOCUMENT)
 
 fastlatex:
 	-pdflatex -shell-escape $(DOCUMENT)
@@ -57,15 +66,10 @@ clean:
 	-find . -type f -name "*~" -exec rm -f {} \;
 
 cleanall: clean
-	-find . -type f -name "*.aux" -exec rm -f {} \;
-	-find . -type f -name "*.toc" -exec rm -f {} \;
-	-find . -type f -name "*.bbl" -exec rm -f {} \;
-	-find . -type f -name "*.log" -exec rm -f {} \;
-	-find . -type f -name "*.out" -exec rm -f {} \;
-	-find . -type f -name "*.blg" -exec rm -f {} \;
-	-find . -type f -name "*.nav" -exec rm -f {} \;
+	for i in $(TEMPFILES); do \
+		find . -type f -name $$i -exec rm -f {} \; ; \
+	done
 	-find . -type f -regextype posix-extended -regex '.{1,100}\.t[1-9]{1,3}' -exec rm -f {} \;
-	-find . -type f -name "*.mp" -exec rm -f {} \;
 	-find . -type f -regextype posix-extended -regex '.{1,100}\.[1-9]{1,3}' -exec rm -f {} \;
 
 
