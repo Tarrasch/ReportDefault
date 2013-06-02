@@ -5,6 +5,8 @@ DOCUMENT = Report
 
 OPENPROGRAM = -evince
 
+LATEXFLAGS = --shell-escape
+
 all: latex openprog
 
 
@@ -14,7 +16,6 @@ presentation-make: no-source-latex openprog
 
 presentation-publish-make: publish-latex 
 	$(OPENPROGRAM) handout-$(DOCUMENT).pdf
-
 
 no-source-latex:
 	-pdflatex --shell-escape $(DOCUMENT)
@@ -37,6 +38,17 @@ latex:
 	pdflatex -shell-escape $(DOCUMENT)
 	bibtex $(DOCUMENT)
 	pdflatex -shell-escape $(DOCUMENT)
+
+dual-source-latex:
+	-pdflatex $(LATEXFLAGS) $(DOCUMENT)
+	-pdflatex $(LATEXFLAGS) $(DOCUMENT)
+	bibtex $(SOURCE)
+	bibtex $(PERSONAL)
+	-pdflatex $(LATEXFLAGS) $(DOCUMENT)
+	-pdflatex $(LATEXFLAGS) $(DOCUMENT)
+	bibtex $(SOURCE)
+	bibtex $(PERSONAL)
+	-pdflatex $(LATEXFLAGS) $(DOCUMENT)
 
 openprog:
 	$(OPENPROGRAM) $(DOCUMENT).pdf
