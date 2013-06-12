@@ -14,7 +14,12 @@ all: latex openprog
 
 .PHONY: all glossaries-latex latex-then-glossaries fast presentation-make presentation-publish-make no-source-latex publish-latex glossaries fast-latex latex dual-source-latex openprog clean cleanall fpdfeps pdfeps feynman-latex
 
+.NOTPARALLEL: %
+
+
 glossaries-latex: fastlatex glossaries latex openprog
+
+glossaries-nosource-latex: fastlatex glossaries no-source-latex openprog
 
 fast: fastlatex openprog
 
