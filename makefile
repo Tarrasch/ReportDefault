@@ -5,9 +5,9 @@ DOCUMENT = Report
 
 OPENPROGRAM = -evince
 
-LATEXFLAGS = --shell-escape
+LATEXFLAGS = -shell-escape -output-directory ~/LogbookWorkdir/
 
-TEMPFILES =  "*.aux" "*.toc" "*.bbl" "*.log" "*.out" "*.blg" "*.nav"  "*.mp" "*.acn" "*.acr" "*.alg" "*.glg" "*.glo" "*.gls" "*.idx" "*.xdy"
+TEMPFILES =  "*.aux" "*.toc" "*.bbl" "*.log" "*.out" "*.blg" "*.nav"  "*.mp" "*.acn" "*.acr" "*.alg" "*.glg" "*.glo" "*.gls" "*.xdy"
 
 
 all: latex openprog
@@ -29,9 +29,9 @@ presentation-publish-make: publish-latex
 	$(OPENPROGRAM) handout-$(DOCUMENT).pdf
 
 no-source-latex:
-	-pdflatex --shell-escape $(DOCUMENT)
-	-pdflatex --shell-escape $(DOCUMENT)
-	-pdflatex --shell-escape $(DOCUMENT)
+	-pdflatex $(LATEXFLAGS) $(DOCUMENT)
+	-pdflatex $(LATEXFLAGS) $(DOCUMENT)
+	-pdflatex $(LATEXFLAGS) $(DOCUMENT)
 
 publish-latex:
 	pdflatex --jobname=handout-$(DOCUMENT) '\PassOptionsToClass{handout}{beamer} \input{$(DOCUMENT)}' 
@@ -42,16 +42,16 @@ glossaries:
 	-makeglossaries $(DOCUMENT)
 
 fastlatex:
-	-pdflatex -shell-escape $(DOCUMENT)
+	-pdflatex $(LATEXFLAGS) $(DOCUMENT)
 
 latex:	
-	pdflatex -shell-escape $(DOCUMENT)
-	pdflatex -shell-escape $(DOCUMENT)
+	pdflatex $(LATEXFLAGS) $(DOCUMENT)
+	pdflatex $(LATEXFLAGS) $(DOCUMENT)
 	bibtex $(DOCUMENT)
-	pdflatex -shell-escape $(DOCUMENT)
-	pdflatex -shell-escape $(DOCUMENT)
+	pdflatex $(LATEXFLAGS) $(DOCUMENT)
+	pdflatex $(LATEXFLAGS) $(DOCUMENT)
 	bibtex $(DOCUMENT)
-	pdflatex -shell-escape $(DOCUMENT)
+	pdflatex $(LATEXFLAGS) $(DOCUMENT)
 
 dual-source-latex:
 	-pdflatex $(LATEXFLAGS) $(DOCUMENT)
