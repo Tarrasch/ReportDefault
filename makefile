@@ -5,7 +5,7 @@ DOCUMENT = Report
 
 OPENPROGRAM = -evince
 
-LATEXFLAGS = -shell-escape -output-directory ~/LogbookWorkdir/
+LATEXFLAGS = -shell-escape
 
 TEMPFILES =  "*.aux" "*.toc" "*.bbl" "*.log" "*.out" "*.blg" "*.nav"  "*.mp" "*.acn" "*.acr" "*.alg" "*.glg" "*.glo" "*.gls" "*.xdy"
 
