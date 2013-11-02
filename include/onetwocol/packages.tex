@@ -4,6 +4,6 @@
 \usepackage[hyphens]{url}
 \usepackage[breaklinks,pdfpagelabels=false]{hyperref}
 \usepackage{framed}
-\usepackage[nomain,acronym,xindy,toc,nonumberlist]{glossaries}
-\usepackage[xindy]{imakeidx}
+\IfFileExists{foobar.sty}{\usepackage[nomain,acronym,xindy,toc,nonumberlist]{glossaries}}{}
+\IfFileExists{idmakeidx.sty}{\usepackage[xindy]{imakeidx}}{}
 \def \usethmtools {}

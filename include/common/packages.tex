@@ -20,7 +20,7 @@
 \usepackage{dsfont}
 \usepackage{amssymb}
 \usepackage{multicol}
-\usepackage{esvect}
+\IfFileExists{esvect.sty}{\usepackage{esvect}}{}
 \usepackage[font=small,format=plain,labelfont=bf,up,textfont=it,up,indention=1cm,labelsep=period]{caption}
 \usepackage{multirow}
 \usepackage{array}
@@ -33,8 +33,8 @@
 \usepackage{tikz}
 \usepackage{amsthm}
 \usepackage{eso-pic}
-\usepackage{feynmp}
-\usepackage{simplewick}
+\IfFileExists{feynmp.sty}{\usepackage{feynmp}}{}
+\IfFileExists{simplewick.sty}{\usepackage{simplewick}}{}
 \ifdefined\usethmtools
-\usepackage{thmtools}
+\IfFileExists{thmtools}{\usepackage{thmtools}}{}
 \fi
