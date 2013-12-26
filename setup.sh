@@ -34,6 +34,10 @@ function main()
 	    cp -rn templates/coverletter/* ..
 	    cp -rn templates/global ..
 	    ;;
+	"prl")
+		cp -rn templates/prl/* ..
+		cp -rn templates/global ..
+		;;
 	"thesis")
 		cp -rn templates/thesis/* ..
 		cp -rn templates/global ..
@@ -42,11 +46,14 @@ function main()
 	    print_error_and_fail
     esac
     
-    if [ -f ../initialize.sh ]
+	if [ "$2" != "norun" ] 
 	then
-	cd ..
-	./initialize.sh
-    fi
+		if [ -f ../initialize.sh ]
+		then
+			cd ..
+			./initialize.sh
+		fi
+	fi
     
 }
 
@@ -60,7 +67,8 @@ function print_error_and_fail()
     echo -e "present \t (Template for Beamer presentation)";
     echo -e "coverletter \t (Cover letter for job application)";
     echo -e "cv \t\t (Curriculum Vitae template)";
+	echo -e "prl \t\t (Article template)";
     exit 1;    
 }
 
-main $1
+main $1 $2

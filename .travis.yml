@@ -1,0 +1,13 @@
+language: bash
+
+before_install:
+  - git submodule update --init --recursive
+
+before_script: 
+  - echo -en ".\n.\n" >> vask
+
+script: 
+  - ./setup.sh < vask && make makerun
+
+compiler: 
+  - gcc
